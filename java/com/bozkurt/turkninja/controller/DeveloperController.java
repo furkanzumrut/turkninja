@@ -16,8 +16,14 @@ public class DeveloperController {
 	
 	@RequestMapping(value="/users/{username}")
 	public String userPage(@PathVariable("username") String username, Model model){
-	    Developer developer=developerService.getDeveloperByUsername(username);
-	    model.addAttribute("developer", developer);
+	    try{
+		Developer developer=developerService.getDeveloperByUsername(username);
+		model.addAttribute("developer", developer);
+	    }catch(IndexOutOfBoundsException ex){
+	    	System.out.println("No developer found");
+	    	return "noDeveloper";
+	    } 
+	    model.addAttribute("username", username);
 	    return "signed";
 	}
 }

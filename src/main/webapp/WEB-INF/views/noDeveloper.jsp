@@ -15,33 +15,7 @@
 </head>
 <body>
     <div class="container" align="center">
-        <table border="0">
-            <tr>
-                <td colspan="2" align="center"><h2>Welcome</h2></td>
-            </tr>
- 			<tr>
-                <td>Adı :</td>
-                <td>${developer.firstName}</td>
-            </tr>
-             <tr>
-                <td>Soyadı :</td>
-                <td>${developer.lastName}</td>
-            </tr>
-            <tr>
-                <td>Kullanıcı Adı :</td>
-                <td>${developer.username}</td>
-            </tr>
-            <tr>
-                <td>E-mail :</td>
-                <td>${developer.email}</td>
-            </tr>
-            <tr>
-                <td>Doğum Yılı :</td>
-                <td>${developer.birthYear}</td>
-            </tr>
-
- 
-        </table>
+	<p>${username} KAYITLI KULLANICI BULANAMADI!</p>
     </div>
 </body>
 </html>

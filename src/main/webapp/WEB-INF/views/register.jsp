@@ -19,29 +19,51 @@
     <div class="active" align="center" ng-controller="RegisterController">
         <form:form action="register" method="post" commandName="userForm">
             <table border="0" class="table-condensed">
+                
                 <tr>
-                    <td colspan="2" align="center"><h2>Spring MVC Form Demo - Registration</h2></td>
+                <td>
+                <table>
+                <tr>
+                    <td colspan="2" align="center"><h2>Kayıt Ol</h2></td>
                 </tr>
-                <tr>
-                    <td>User Name:</td>
-                    <td><form:input path="username" ng-model="username" ng-click="userCheck(username)"/></td>
+                 <tr>
+                    <td>Adı </td>
+                    <td><form:input path="firstName"/></td>
+                   
+                </tr>
+                 <tr>
+                    <td>Soyadı </td>
+                    <td><form:input path="lastName"/></td>
                    
                 </tr>
                 <tr>
-                    <td>Password:</td>
+                    <td>Kullanıcı Adı </td>
+                    <td><form:input path="username"/></td>
+                   
+                </tr>
+                <tr>
+                    <td>Şifre </td>
                     <td><form:password path="password" /></td>
                 </tr>
                 <tr>
-                    <td>E-mail:</td>
+                    <td>E-mail </td>
                     <td><form:input path="email" /></td>
                 </tr>
                 <tr>
-                    <td>Birthday (mm/dd/yyyy):</td>
+                    <td>Doğum Yılı </td>
                     <td><form:input path="birthYear" /></td>
                 </tr>
                 <tr>
-                    <td colspan="2" align="center"><input type="submit" class="btn-success" value="Register" /></td>
+                    <td colspan="2" align="center"><input type="submit" class="btn-success" value="Kayıt Ol" /></td>
                 </tr>
+                </table>
+                <td>
+                <td>
+                
+				<img src="/turkninja/resources/img/turk_ninja.png " />
+                </td>
+                </tr>
+                
             </table>
         </form:form>
     </div>
