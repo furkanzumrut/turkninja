@@ -36,7 +36,7 @@ public class RegisterController {
     public String processRegistration(@ModelAttribute("userForm") Developer developer,
             Map<String, Object> model) {
          
-        developerService.save(developer);
+        developerService.save(developer); 
         return "redirect:/users/"+developer.getUsername();
     }
     

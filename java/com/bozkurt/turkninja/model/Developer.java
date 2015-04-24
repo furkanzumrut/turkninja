@@ -1,8 +1,11 @@
 package com.bozkurt.turkninja.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -10,13 +13,16 @@ import javax.persistence.Table;
 public class Developer {
 	@Id
 	@GeneratedValue
-	private long ID;
+	private long id;
 	private String firstName;
 	private String lastName;
 	private String username;
 	private String email;
 	private String password;
 	private int birthYear;
+	@OneToMany(mappedBy="developer")
+	private List<Article> articles;
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -53,14 +59,19 @@ public class Developer {
 	public void setBirthYear(int birthYear) {
 		this.birthYear = birthYear;
 	}
-	public long getID() {
-		return ID;
+	
+	public long getId() {
+		return id;
 	}
-	public void setID(long iD) {
-		ID = iD;
+	public void setId(long id) {
+		this.id = id;
+	}
+	public List<Article> getArticles() {
+		return articles;
+	}
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
 	}
 
-	
-	
 	
 }

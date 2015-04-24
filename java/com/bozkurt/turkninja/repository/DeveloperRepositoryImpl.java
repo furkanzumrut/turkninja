@@ -2,7 +2,6 @@ package com.bozkurt.turkninja.repository;
 
 import java.util.List;
 
-import javax.management.Query;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
