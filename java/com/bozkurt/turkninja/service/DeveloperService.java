@@ -6,4 +6,5 @@ public interface DeveloperService {
 
 	public void save(Developer developer);
 	public Developer getDeveloperByUsername(String username);
+	public Developer login(String email,String password);
 }

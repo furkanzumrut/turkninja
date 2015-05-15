@@ -43,4 +43,11 @@ public class ArticleRepositoryImpl implements ArticleRepository {
 	public List<Article> getArticles() {
 		return getCurrentSession().createQuery("from Article").list();
 	}
+	@Override
+	public List<Article> getArticlesByDeveloperId(long developer_id) {
+		// TODO Auto-generated method stub
+		List<Article> articles= getCurrentSession().createQuery("from Article A where A.developer.id='"+developer_id+"'").list();
+		return articles;
+	}
 }
+

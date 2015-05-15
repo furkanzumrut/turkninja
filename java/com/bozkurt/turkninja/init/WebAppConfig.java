@@ -35,6 +35,9 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
     private static final String PROPERTY_NAME_HIBERNATE_DIALECT = "hibernate.dialect";
     private static final String PROPERTY_NAME_HIBERNATE_SHOW_SQL = "hibernate.show_sql";
     private static final String PROPERTY_NAME_HBM2DDL_AUTO="hibernate.hbm2ddl.auto";
+    private static final String PROPERTY_NAME_HIBERNATE_CONNECTION_CHARSET="hibernate.connection.CharSet";
+    private static final String PROPERTY_NAME_HIBERNATE_CONNECTION_CHARACTERENCODING="hibernate.connection.characterEncoding";
+    private static final String PROPERTY_NAME_HIBERNATE_CONNECTION_USEUNICODE="hibernate.connection.useUnicode";
     private static final String PROPERTY_NAME_ENTITYMANAGER_PACKAGES_TO_SCAN = "entitymanager.packages.to.scan";
     @Resource
 	private Environment env;
@@ -65,7 +68,13 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
 		Properties properties = new Properties();
 		properties.put(PROPERTY_NAME_HIBERNATE_DIALECT, env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_DIALECT));
 		properties.put(PROPERTY_NAME_HIBERNATE_SHOW_SQL, env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_SHOW_SQL));
-		properties.put(PROPERTY_NAME_HBM2DDL_AUTO,env.getRequiredProperty(PROPERTY_NAME_HBM2DDL_AUTO));
+		properties.put(PROPERTY_NAME_HBM2DDL_AUTO,env.getRequiredProperty(PROPERTY_NAME_HBM2DDL_AUTO));	
+		properties.put(PROPERTY_NAME_HIBERNATE_CONNECTION_CHARSET, env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_CONNECTION_CHARSET));
+		properties.put(PROPERTY_NAME_HIBERNATE_CONNECTION_CHARACTERENCODING, env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_CONNECTION_CHARACTERENCODING));
+		properties.put(PROPERTY_NAME_HIBERNATE_CONNECTION_USEUNICODE,env.getRequiredProperty(PROPERTY_NAME_HIBERNATE_CONNECTION_USEUNICODE));
+		
+		 
+		
 		return properties;	
 	}
 	
@@ -82,6 +91,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter {
 		resolver.setPrefix("/WEB-INF/views/");
 		resolver.setSuffix(".jsp");
 		resolver.setViewClass(JstlView.class);
+		resolver.setContentType("text/html;charset=UTF-8");
 		return resolver;
 	}
 	@Override

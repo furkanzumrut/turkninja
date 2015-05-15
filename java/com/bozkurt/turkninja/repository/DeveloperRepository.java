@@ -14,5 +14,5 @@ public interface DeveloperRepository{
 	public void deleteDeveloper(int id);
 	public List<Developer> getDevelopers();
 	public Developer getDeveloperByUsername(String username);
-
+	public Developer getDeveloperByEmailAndPAssword(String email,String password);
 }

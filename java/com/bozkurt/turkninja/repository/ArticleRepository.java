@@ -11,5 +11,6 @@ public interface ArticleRepository {
 	public Article getArticle(int id);
 	public void deleteArticle(int id);
 	public List<Article> getArticles();
+	public List<Article> getArticlesByDeveloperId(long  developer_id);
 
 }

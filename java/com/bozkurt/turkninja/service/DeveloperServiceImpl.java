@@ -24,5 +24,14 @@ public class DeveloperServiceImpl implements DeveloperService {
 		return developerRepository.getDeveloperByUsername(username);
 	}
 
+
+	@Override
+	public Developer login(String email, String password) {
+		return developerRepository.getDeveloperByEmailAndPAssword(email,password);
+	}
+
+
+
+
 	
 }

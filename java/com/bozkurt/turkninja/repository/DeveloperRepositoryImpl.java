@@ -2,7 +2,6 @@ package com.bozkurt.turkninja.repository;
 
 import java.util.List;
 
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +50,14 @@ public class DeveloperRepositoryImpl implements DeveloperRepository {
 	@SuppressWarnings("unchecked")
 	public List<Developer> getDevelopers() {
 		return getCurrentSession().createQuery("from Developer").list();
+	}
+	@Override
+	public Developer getDeveloperByEmailAndPAssword(String email,
+			String password) {		
+		String hql = "FROM Developer D WHERE D.email='"+email+"' and D.password='"+password+"'";
+		Session session= getCurrentSession();
+		Developer developer=(Developer)session.createQuery(hql).list().get(0);
+		return developer;
 	}
 
 }

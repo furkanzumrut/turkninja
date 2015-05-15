@@ -22,15 +22,6 @@ public class RegisterController {
 	@Autowired
 	DeveloperService developerService;
 
-	
-    @RequestMapping(method = RequestMethod.GET)
-    public String viewRegistration(Map<String, Object> model) {
-        Developer userForm = new Developer();    
-        model.put("userForm", userForm);
-        
-        
-        return "register";
-    }
      
     @RequestMapping(method = RequestMethod.POST)
     public String processRegistration(@ModelAttribute("userForm") Developer developer,

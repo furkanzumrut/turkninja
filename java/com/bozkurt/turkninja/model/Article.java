@@ -16,9 +16,13 @@ public class Article {
 	private long id;
 	private String header;
 	private String content;
+	private String subcontent;
 	@ManyToOne
 	@JoinColumn(name="developer_id")
 	private Developer developer;
+	@ManyToOne
+	@JoinColumn(name="category_id")
+	private Category category;
 	private Date createDate;
 	private Date lastUpdated; 
 	
@@ -58,6 +62,18 @@ public class Article {
 	}
 	public void setLastUpdated(Date lastUpdated) {
 		this.lastUpdated = lastUpdated;
+	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	public String getSubcontent() {
+		return getContent().substring(0,(getContent().length()-1) /2) ;
+	}
+	public void setSubcontent(String subcontent) {
+		this.subcontent = subcontent;
 	}
 
 	
