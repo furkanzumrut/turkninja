@@ -9,9 +9,11 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bozkurt.turkninja.model.Article;
+
 @Repository
 @Transactional
 public class ArticleRepositoryImpl implements ArticleRepository {
+
 	@Autowired
 	private SessionFactory sessionFactory;
 	
@@ -43,6 +45,7 @@ public class ArticleRepositoryImpl implements ArticleRepository {
 	public List<Article> getArticles() {
 		return getCurrentSession().createQuery("from Article").list();
 	}
+
 	@Override
 	public List<Article> getArticlesByDeveloperId(long developer_id) {
 		// TODO Auto-generated method stub
