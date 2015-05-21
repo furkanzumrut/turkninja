@@ -1,0 +1,11 @@
+== Turkninja
+
+Turkninja Spring MVC ile geliştirilen, yazılımcılar arası bir sosyal ağ projesidir.
+
+== Nasıl kurulur?
+
+Bla bla bla
+
+== Lisans tipi
+
+Bla 
