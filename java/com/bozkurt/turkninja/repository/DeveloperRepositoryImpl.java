@@ -37,6 +37,8 @@ public class DeveloperRepositoryImpl implements DeveloperRepository {
 	public Developer getDeveloperByUsername(String username){
 		String hql = "FROM Developer D WHERE D.username='"+username+"'";
 		Session session= getCurrentSession();
+
+		// @todo sonuç bulunamadığında listeden 0. kaydı alamayacaktır.
 		Developer developer=(Developer)session.createQuery(hql).list().get(0);
 		return developer;
 	}
@@ -56,6 +58,8 @@ public class DeveloperRepositoryImpl implements DeveloperRepository {
 			String password) {		
 		String hql = "FROM Developer D WHERE D.email='"+email+"' and D.password='"+password+"'";
 		Session session= getCurrentSession();
+
+		// @todo sonuç bulunamadığında listeden 0. kaydı alamayacaktır.
 		Developer developer=(Developer)session.createQuery(hql).list().get(0);
 		return developer;
 	}
